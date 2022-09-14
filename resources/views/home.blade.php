@@ -13,8 +13,10 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                    <p>
+                        You are logged in successfully, Please click the button below to manage borrowers!
+                    </p>
+                    <a href="/borrowers" class="btn btn-primary">Manage Borrowers</a>
                 </div>
             </div>
         </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BorrowerController as BorrowerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::middleware(['auth:web', 'verified'])->group(function() {
+    Route::get('/borrowers', [BorrowerController::class, 'index']);
+    Route::get('create/borrowers', function () {
+        return view('borrowers.create');
+    });
+    Route::post('/borrowers', [BorrowerController::class, 'create']);
+    Route::put('/borrowers/{borrower}', [BorrowerController::class, 'update']);
+    Route::delete('/borrowers/{borrower}', [BorrowerController::class, 'delete']);
+});
