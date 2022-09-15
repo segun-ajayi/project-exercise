@@ -20,11 +20,11 @@
                     <td>{{ $item->monthly_sales }}</td>
                     <td>{{ $item->monthly_expenses }}</td>
                     <td>
-                        <button class="btn btn-group">
+                        <div class="btn-group btn-group-sm" role="group" aria-label="...">
                             <button wire:click="view" class="btn btn-info">View</button>
                             <button wire:click="edit" class="btn btn-warning">Edit</button>
                             <button wire:click="delete" class="btn btn-danger">Delete</button>
-                        </button>
+                        </div>
                     </td>
                 </tr>
             @empty
