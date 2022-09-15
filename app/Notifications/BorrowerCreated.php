@@ -41,7 +41,7 @@ class BorrowerCreated extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->greeting('Hello! ' . $notifiable->getName())
+            ->greeting('Hello! ')
             ->line('We are happy to notify you that an account has been created for you on our platform.')
             ->line('Your login credentials are:')
             ->line('Username: ' . $notifiable->email)
